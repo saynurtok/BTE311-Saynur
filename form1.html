@@ -1,42 +1,64 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <title>Tuba Solak - 4. Hafta</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 50px;
-      line-height: 1.6;
-    }
-    h1 {
-      font-size: 32px;
-      font-weight: bold;
-    }
-    h2 {
-      margin-top: 20px;
-    }
-    a {
-      color: purple;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Tuba Solak</h1>
-
-  <ol>
-    <li>4. Hafta
-      <ul>
-        <li><a href="form1.html">Form1.html</a></li>
-        <li><a href="Test1.html">Test1.html</a></li>
-      </ul>
-    </li>
-  </ol>
-
-</body>
+<!doctype html>
+<html>
+    <head>
+        <title>Kullanıcı Kayıt Formu</title>
+        <meta charset="utf-8" />
+        <style type="text/css">
+            body{
+                background:#76b852;
+                font-size:10px;
+                font-family:Trebuchet MS;
+            }
+            #kayitFormu{
+                
+                border-radius:10px;
+                background:#ffffff;
+                width:360px;
+                margin:auto;
+                margin-top:20px;
+                padding:15px;
+                text-align:center;
+            }
+            input, button
+            {
+                border-radius:5px;
+                border:none;
+                width:300px;
+                height:50px;
+                margin:20px 0px 20px 0px;
+                background:rgba(240,240,240,.5);
+                padding-left:15px;
+                font-style:italic;
+                
+            }
+            
+            .btn{
+                background:#76b852;
+                color:white;
+            }
+            h3{
+                color:#333;
+                text-transform:uppercase;
+                font-size:20px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="kayitFormu">
+            <form action="kayityap.php" method="get">
+                <h3>KULLANICI Kayıt Formu</h3>
+                <input type="text" name="adiniz" placeholder="kullanıcı adı" required maxlength="6"  /> 
+                
+                <input type="email" name="eposta" placeholder="eposta giriniz" required />
+                
+                <input type="password" name="parola" placeholder="şifrenizi giriniz" required pattern="[0-9a-zA-Z]{5}"/>
+                
+                <input class="btn" type="submit" value="KAYIT OL" />
+            </form>
+            
+        </div>
+    
+    
+    </body>
 </html>
