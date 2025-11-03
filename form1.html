@@ -47,7 +47,7 @@
 
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -77,4 +77,103 @@
 </form>
     
 </body>
-</html>
+</html> -->
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Sayfası</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #fce4ec; /* soft pembe arka plan */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ad1457;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            color: #555;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #f06292;
+            box-shadow: 0 0 4px #f8bbd0;
+        }
+
+        input[type="submit"] {
+            background-color: #f06292;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ec407a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>HTML Formu</h2>
+        <form action="/action_page.php">
+            <label for="isim">Adınız:</label>
+            <input type="text" id="isim" name="isim" required>
+
+            <label for="sisim">Soyadınız:</label>
+            <input type="text" id="sisim" name="sisim" required>
+
+            <label for="mail">Hacettepe uzantılı mailiniz:</label>
+            <input type="email" id="mail" name="mail" placeholder="ornek@hacettepe.edu.tr" required>
+
+            <input type="submit" value="Gönder">
+        </form
