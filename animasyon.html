@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Animasyon Ödevi</title>
+<style>
+
+body {
+  background: linear-gradient(135deg, #f8cdda, #1d2b64);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  font-family: Arial, sans-serif;
+}
+
+/* Genel Daire Stili */
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border: 3px solid #333;
+}
+
+/* 1. Daire – Yukarı Aşağı */
+.circle1 {
+  animation: upDown 2s infinite ease-in-out;
+}
+@keyframes upDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-50px); }
+}
+
+/* 2. Daire – Öne Arkaya (Scale) */
+.circle2 {
+  animation: zoom 1.8s infinite ease-in-out;
+}
+@keyframes zoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+}
+
+/* 3. Daire – Silikleşip Belirginleşme */
+.circle3 {
+  animation: fade 2.2s infinite ease-in-out;
+}
+@keyframes fade {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* 4. Daire – Sağa Sola */
+.circle4 {
+  animation: leftRight 2s infinite ease-in-out;
+}
+@keyframes leftRight {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(60px); }
+}
+
+/* 5. Daire – Dönme */
+.circle5 {
+  animation: rotate 2s infinite linear;
+}
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
+</head>
+<body>
+
+<div class="circle circle1">🙂</div>
+<div class="circle circle2">😎</div>
+<div class="circle circle3">😶</div>
+<div class="circle circle4">😮</div>
+<div class="circle circle5">🤩</div>
+
+</body>
+</html>
