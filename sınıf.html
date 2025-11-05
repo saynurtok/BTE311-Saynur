@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
@@ -56,6 +56,95 @@ body {
     font-size: 18px;
     margin-top: 8px;
 }
+</style>
+
+</head>
+<body>
+
+<div class="box-wrapper">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <div class="text-area">
+        <h1>Hacettepe BÖTE</h1>
+        <p>Öğretim teknolojileri ve bilişim teknolojileri eğitimi için en iyi adres.</p>
+    </div>
+</div>
+
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Hacettepe BÖTE</title>
+
+<style>
+body {
+    background: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Arka plandaki katman bloklar */
+.box-wrapper {
+    position: relative;
+    width: 700px;
+    height: 250px;
+}
+
+.box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(255, 0, 0, 0.25);
+    animation: breathe 3s infinite ease-in-out;
+}
+
+/* Nefes alıp verme animasyonu */
+@keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+}
+
+/* Katman kaydırmaları */
+.box:nth-child(1) { transform: translate(0px, 0px); }
+.box:nth-child(2) { transform: translate(-20px, -10px); }
+.box:nth-child(3) { transform: translate(20px, 10px); }
+.box:nth-child(4) { transform: translate(-35px, 20px); }
+.box:nth-child(5) { transform: translate(35px, -20px); }
+
+/* Yazı alanı */
+.text-area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.text-area h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.text-area p {
+    font-size: 18px;
+    margin-top: 8px;
+}
+
 </style>
 
 </head>
