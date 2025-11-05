@@ -2,52 +2,60 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>Web Programlama Testi</title>
+<title>HTML Testi</title>
 </head>
 
-<body bgcolor="#2b2b2b" text="white">
+<body style="background-color: #d0f0c0; font-family: Arial;">
 
-<h1>Web programlama testi</h1>
-
-<form>
-Kullandığınız programlama dilleri:<br>
-<input type="checkbox" name="dil" value="java"> java<br>
-<input type="checkbox" name="dil" value="python"> python<br>
-<input type="checkbox" name="dil" value="c#"> c#<br>
-<input type="checkbox" name="dil" value="c++"> c++<br>
-<input type="checkbox" name="dil" value="html"> html<br><br>
-
+<h1 style="text-align:center; color: darkgreen;">HTML Konu Testi</h1>
 <hr>
 
-<p>1. Aşağıdaki etiketlerden hangisi bir paragraf oluşturur?</p>
-<input type="radio" name="s1" value="h1"> &lt;h1&gt;<br>
-<input type="radio" name="s1" value="p"> &lt;p&gt;<br>
-<input type="radio" name="s1" value="div"> &lt;div&gt;<br><br>
+<form>
 
-<p>2. Başka bir sayfaya geçiş yapmak için hangi etiket kullanılır?</p>
-<input type="radio" name="s2" value="link"> &lt;link&gt;<br>
-<input type="radio" name="s2" value="a"> &lt;a&gt;<br>
-<input type="radio" name="s2" value="href"> &lt;href&gt;<br><br>
+<!-- Soru 1 -->
+<h3>1. HTML nedir?</h3>
+<input type="radio" name="q1"> Bir programlama dilidir.<br>
+<input type="radio" name="q1"> Web sayfalarının yapısını tanımlar.<br>
+<input type="radio" name="q1"> Görsel düzenleme aracıdır.<br>
 
-<p>3. Resim eklemek için hangi etiket kullanılır?</p>
-<input type="radio" name="s3" value="img"> &lt;img&gt;<br>
-<input type="radio" name="s3" value="pic"> &lt;pic&gt;<br>
-<input type="radio" name="s3" value="photo"> &lt;photo&gt;<br><br>
+<!-- Soru 2 -->
+<h3>2. Aşağıdakilerden hangileri HTML etiketidir?</h3>
+<input type="checkbox" name="q2"> &lt;p&gt;<br>
+<input type="checkbox" name="q2"> &lt;div&gt;<br>
+<input type="checkbox" name="q2"> print()<br>
 
-<p>4. Satır atlamak için hangi etiket kullanılır?</p>
-<input type="radio" name="s4" value="br"> &lt;br&gt;<br>
-<input type="radio" name="s4" value="lb"> &lt;lb&gt;<br>
-<input type="radio" name="s4" value="hr"> &lt;hr&gt;<br><br>
+<!-- Soru 3 -->
+<h3>3. CSS ne işe yarar?</h3>
+<input type="radio" name="q3"> Sayfanın stilini ayarlamak için kullanılır.<br>
+<input type="radio" name="q3"> Veritabanı bağlantısı kurar.<br>
+<input type="radio" name="q3"> Program çalıştırır.<br>
 
-<p>5. Başlığın en büyük seviyesini gösteren etiket hangisidir?</p>
-<input type="radio" name="s5" value="h6"> &lt;h6&gt;<br>
-<input type="radio" name="s5" value="h3"> &lt;h3&gt;<br>
-<input type="radio" name="s5" value="h1"> &lt;h1&gt;<br><br>
+<!-- Soru 4 -->
+<h3>4. JavaScript hangi amaçla kullanılır?</h3>
+<input type="radio" name="q4"> Sayfalara etkileşim kazandırmak için.<br>
+<input type="radio" name="q4"> Sadece metin biçimlendirmek için.<br>
+<input type="radio" name="q4"> Görselleri biçimlendirmek için.<br>
 
-<input type="submit" value="Testi Gönder">
+<!-- Soru 5 -->
+<h3>5. Hangi HTML etiketi resim eklemek için kullanılır?</h3>
+<select name="q5">
+  <option>&lt;img&gt;</option>
+  <option>&lt;picture&gt;</option>
+  <option>&lt;image&gt;</option>
+</select>
+
+<!-- Ek Yorum -->
+<h3>Ek Yorum</h3>
+<textarea rows="4" cols="50" placeholder="Test hakkında yorumunuzu yazın..."></textarea><br><br>
+
+<input type="checkbox" name="onay"> Cevaplarımın doğruluğunu onaylıyorum.<br><br>
+
+<input type="submit" value="Gönder">
+<input type="reset" value="Sıfırla">
 
 </form>
 
 </body>
 </html>
+
 
