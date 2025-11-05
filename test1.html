@@ -2,159 +2,71 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>HTML Temel Test</title>
-
-<style>
-body {
-    background: #f3f3f3;
-    font-family: Arial, sans-serif;
-    padding: 20px;
-}
-
-.container {
-    background: white;
-    padding: 20px;
-    width: 600px;
-    margin: auto;
-    border-radius: 8px;
-    border: 2px solid #ccc;
-}
-
-h2 {
-    text-align: center;
-    color: #d40000;
-}
-
-.question {
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #d40000;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-button:hover {
-    opacity: 0.8;
-}
-
-#result {
-    margin-top: 20px;
-    font-weight: bold;
-    font-size: 20px;
-    text-align: center;
-}
-</style>
-
+<title>Web Programlama Testi</title>
 </head>
-<body>
 
-<div class="container">
-    <h2>HTML Temel Testi</h2>
+<body bgcolor="#2b2b2b" text="white">
 
-    <form id="quizForm">
+<h1>Web programlama testi</h1>
 
-        <div class="question">
-            1) HTML ne için kullanılır?<br>
-            <input type="radio" name="q1" value="a"> Web sayfası yapısı oluşturmak<br>
-            <input type="radio" name="q1" value="b"> Fotoğraf düzenlemek<br>
-            <input type="radio" name="q1" value="c"> Oyun yapmak<br>
-        </div>
+<form>
 
-        <div class="question">
-            2) `<p>` etiketi ne işe yarar?<br>
-            <input type="radio" name="q2" value="a"> Başlık ekler<br>
-            <input type="radio" name="q2" value="b"> Paragraf ekler<br>
-            <input type="radio" name="q2" value="c"> Bağlantı ekler<br>
-        </div>
+Adınız:<br>
+<input type="text" name="ad"><br><br>
 
-        <div class="question">
-            3) `<a>` etiketi hangi amaçla kullanılır?<br>
-            <input type="radio" name="q3" value="a"> Resim eklemek<br>
-            <input type="radio" name="q3" value="b"> Video oynatmak<br>
-            <input type="radio" name="q3" value="c"> Bağlantı (link) vermek<br>
-        </div>
+Soyadınız:<br>
+<input type="text" name="soyad"><br><br>
 
-        <div class="question">
-            4) Aşağıdakilerden hangisi bir HTML başlık etiketidir?<br>
-            <input type="radio" name="q4" value="a"> `<h1>`<br>
-            <input type="radio" name="q4" value="b"> `<p>`<br>
-            <input type="radio" name="q4" value="c"> `<br>`<br>
-        </div>
+<input type="submit" value="Gönder"><br><br>
 
-        <div class="question">
-            5) `<img>` etiketi hangi amaçla kullanılır?<br>
-            <input type="radio" name="q5" value="a"> Resim eklemek<br>
-            <input type="radio" name="q5" value="b"> Tablo eklemek<br>
-            <input type="radio" name="q5" value="c"> Başlık eklemek<br>
-        </div>
+mail adresiniz<br>
+<input type="email" name="mail"><br><br>
 
-        <div class="question">
-            6) HTML'de satır sonu için hangi etiket kullanılır?<br>
-            <input type="radio" name="q6" value="a"> `<hr>`<br>
-            <input type="radio" name="q6" value="b"> `<br>`<br>
-            <input type="radio" name="q6" value="c"> `<line>`<br>
-        </div>
+doğum tarihiniz<br>
+<input type="date" name="dogum"><br><br>
 
-        <div class="question">
-            7) HTML dosyaları genellikle hangi uzantıyla kaydedilir?<br>
-            <input type="radio" name="q7" value="a"> .txt<br>
-            <input type="radio" name="q7" value="b"> .html<br>
-            <input type="radio" name="q7" value="c"> .img<br>
-        </div>
+cinsiyetiniz:<br>
+<input type="radio" name="cinsiyet" value="Erkek"> Erkek<br>
+<input type="radio" name="cinsiyet" value="Kadın"> Kadın<br><br>
 
-        <div class="question">
-            8) `<ul>` etiketi ne oluşturur?<br>
-            <input type="radio" name="q8" value="a"> Numaralı liste<br>
-            <input type="radio" name="q8" value="b"> Madde işaretli liste<br>
-            <input type="radio" name="q8" value="c"> Resim galerisi<br>
-        </div>
+Kullandığınız programlama dilleri:<br>
+<input type="checkbox" name="dil" value="java"> java<br>
+<input type="checkbox" name="dil" value="python"> python<br>
+<input type="checkbox" name="dil" value="c#"> c#<br>
+<input type="checkbox" name="dil" value="c++"> c++<br>
+<input type="checkbox" name="dil" value="html"> html<br><br>
 
-        <div class="question">
-            9) `<title>` etiketi nerededir?<br>
-            <input type="radio" name="q9" value="a"> body içinde<br>
-            <input type="radio" name="q9" value="b"> head içinde<br>
-            <input type="radio" name="q9" value="c"> html dışında<br>
-        </div>
+<hr>
 
-        <div class="question">
-            10) `<b>` etiketi ne yapar?<br>
-            <input type="radio" name="q10" value="a"> Yazıyı kalın yapar<br>
-            <input type="radio" name="q10" value="b"> Yazıyı altını çizer<br>
-            <input type="radio" name="q10" value="c"> Yazıyı siler<br>
-        </div>
+<p>1. Aşağıdaki etiketlerden hangisi bir paragraf oluşturur?</p>
+<input type="radio" name="s1" value="h1"> &lt;h1&gt;<br>
+<input type="radio" name="s1" value="p"> &lt;p&gt;<br>
+<input type="radio" name="s1" value="div"> &lt;div&gt;<br><br>
 
-        <button type="button" onclick="checkAnswers()">Testi Bitir</button>
+<p>2. Başka bir sayfaya geçiş yapmak için hangi etiket kullanılır?</p>
+<input type="radio" name="s2" value="link"> &lt;link&gt;<br>
+<input type="radio" name="s2" value="a"> &lt;a&gt;<br>
+<input type="radio" name="s2" value="href"> &lt;href&gt;<br><br>
 
-    </form>
+<p>3. Resim eklemek için hangi etiket kullanılır?</p>
+<input type="radio" name="s3" value="img"> &lt;img&gt;<br>
+<input type="radio" name="s3" value="pic"> &lt;pic&gt;<br>
+<input type="radio" name="s3" value="photo"> &lt;photo&gt;<br><br>
 
-    <div id="result"></div>
+<p>4. Satır atlamak için hangi etiket kullanılır?</p>
+<input type="radio" name="s4" value="br"> &lt;br&gt;<br>
+<input type="radio" name="s4" value="lb"> &lt;lb&gt;<br>
+<input type="radio" name="s4" value="hr"> &lt;hr&gt;<br><br>
 
-</div>
+<p>5. Başlığın en büyük seviyesini gösteren etiket hangisidir?</p>
+<input type="radio" name="s5" value="h6"> &lt;h6&gt;<br>
+<input type="radio" name="s5" value="h3"> &lt;h3&gt;<br>
+<input type="radio" name="s5" value="h1"> &lt;h1&gt;<br><br>
 
-<script>
-function checkAnswers() {
-    let answers = {
-        q1:"a", q2:"b", q3:"c", q4:"a", q5:"a",
-        q6:"b", q7:"b", q8:"b", q9:"b", q10:"a"
-    };
+<input type="submit" value="Testi Gönder">
 
-    let score = 0;
-
-    for (let q in answers) {
-        let user = document.querySelector(`input[name="${q}"]:checked`);
-        if (user && user.value === answers[q]) score++;
-    }
-
-    document.getElementById("result").innerHTML = "Puanın: " + score + " / 10";
-}
-</script>
+</form>
 
 </body>
 </html>
+
