@@ -1,52 +1,52 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <title>HTML Testi</title>
 </head>
 
-<body style="background-color: #d0f0c0; font-family: Arial;">
+<body style="background-color: #2d3e59; font-family: Arial;">
 
-<h1 style="text-align:center; color: darkgreen;">HTML Konu Testi</h1>
+<h1 style="text-align:center; color: #042557;">HTML Konu Testi</h1>
 <hr>
 
 <form>
 
-<!-- Soru 1 -->
-<h3>1. HTML nedir?</h3>
+Soru 1 -->
+<!-- <h3>1. HTML nedir?</h3>
 <input type="radio" name="q1"> Bir programlama dilidir.<br>
 <input type="radio" name="q1"> Web sayfalarının yapısını tanımlar.<br>
 <input type="radio" name="q1"> Görsel düzenleme aracıdır.<br>
 
-<!-- Soru 2 -->
-<h3>2. Aşağıdakilerden hangileri HTML etiketidir?</h3>
+Soru 2 -->
+<!-- <h3>2. Aşağıdakilerden hangileri HTML etiketidir?</h3>
 <input type="checkbox" name="q2"> &lt;p&gt;<br>
 <input type="checkbox" name="q2"> &lt;div&gt;<br>
-<input type="checkbox" name="q2"> print()<br>
+<input type="checkbox" name="q2"> print()<br> -->
 
 <!-- Soru 3 -->
-<h3>3. CSS ne işe yarar?</h3>
+<!-- <h3>3. CSS ne işe yarar?</h3>
 <input type="radio" name="q3"> Sayfanın stilini ayarlamak için kullanılır.<br>
 <input type="radio" name="q3"> Veritabanı bağlantısı kurar.<br>
-<input type="radio" name="q3"> Program çalıştırır.<br>
+<input type="radio" name="q3"> Program çalıştırır.<br> -->
 
 <!-- Soru 4 -->
-<h3>4. JavaScript hangi amaçla kullanılır?</h3>
+<!-- <h3>4. JavaScript hangi amaçla kullanılır?</h3>
 <input type="radio" name="q4"> Sayfalara etkileşim kazandırmak için.<br>
 <input type="radio" name="q4"> Sadece metin biçimlendirmek için.<br>
-<input type="radio" name="q4"> Görselleri biçimlendirmek için.<br>
+<input type="radio" name="q4"> Görselleri biçimlendirmek için.<br> -->
 
 <!-- Soru 5 -->
-<h3>5. Hangi HTML etiketi resim eklemek için kullanılır?</h3>
+<!-- <h3>5. Hangi HTML etiketi resim eklemek için kullanılır?</h3>
 <select name="q5">
   <option>&lt;img&gt;</option>
   <option>&lt;picture&gt;</option>
   <option>&lt;image&gt;</option>
-</select>
+</select> -->
 
 
 
-<br><br>
+<!-- <br><br>
 
 <input type="submit" value="Gönder">
 <input type="reset" value="Sıfırla">
@@ -54,6 +54,138 @@
 </form>
 
 </body>
+</html> --> 
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>HTML Testi</title>
+<style>
+  body {
+    background-color: #f0f9ff;
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    text-align: center; /* TÜM YAZILARI ORTALAR */
+  }
+
+  h1 {
+    color: #006666;
+    background-color: #ccf2f4;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+  }
+
+  .soru {
+    background-color: #fff8dc;
+    border: 2px solid #ffe599;
+    padding: 15px;
+    margin: 15px auto;
+    border-radius: 12px;
+    width: 60%; /* ortalanan kutular */
+    text-align: left; /* kutu içeriği sola hizalı kalsın */
+  }
+
+  .soru h3 {
+    color: #004d40;
+    text-align: center;
+  }
+
+  select, textarea, input[type="text"] {
+    width: 90%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: block;
+    margin: 0 auto;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  .butonlar {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  input[type="submit"], input[type="reset"] {
+    background-color: #99e6e6;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px;
+  }
+
+  input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: #66cccc;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>🎨 HTML Konu Testi 🎨</h1>
+
+<form>
+
+<div class="soru">
+  <h3>1. HTML nedir?</h3>
+  <input type="radio" name="q1"> Bir programlama dilidir.<br>
+  <input type="radio" name="q1"> Web sayfalarının yapısını tanımlar.<br>
+  <input type="radio" name="q1"> Grafik tasarım aracıdır.<br>
+</div>
+
+<div class="soru">
+  <h3>2. Aşağıdakilerden hangileri HTML etiketidir?</h3>
+  <input type="checkbox" name="q2"> &lt;div&gt;<br>
+  <input type="checkbox" name="q2"> &lt;h1&gt;<br>
+  <input type="checkbox" name="q2"> print()<br>
+</div>
+
+<div class="soru">
+  <h3>3. CSS ne işe yarar?</h3>
+  <input type="radio" name="q3"> Sayfanın görünümünü ve stilini ayarlamak için.<br>
+  <input type="radio" name="q3"> Veritabanı oluşturmak için.<br>
+  <input type="radio" name="q3"> Program çalıştırmak için.<br>
+</div>
+
+<div class="soru">
+  <h3>4. JavaScript hangi amaçla kullanılır?</h3>
+  <input type="radio" name="q4"> Sayfalara etkileşim kazandırmak için.<br>
+  <input type="radio" name="q4"> Sadece yazı biçimlendirmek için.<br>
+  <input type="radio" name="q4"> Görselleri eklemek için.<br>
+</div>
+
+<div class="soru">
+  <h3>5. Hangi HTML etiketi resim eklemek için kullanılır?</h3>
+  <select name="q5">
+    <option>&lt;img&gt;</option>
+    <option>&lt;picture&gt;</option>
+    <option>&lt;image&gt;</option>
+  </select>
+</div>
+
+<div class="soru">
+  <h3>Ek Yorum</h3>
+  <textarea rows="4" cols="50" placeholder="Test hakkında yorumunuzu yazın..."></textarea><br><br>
+  <input type="checkbox" name="onay"> Cevaplarımın doğruluğunu onaylıyorum.
+</div>
+
+<div class="butonlar">
+  <input type="submit" value="Gönder">
+  <input type="reset" value="Sıfırla">
+</div>
+
+</form>
+
+</body>
 </html>
+
 
 
