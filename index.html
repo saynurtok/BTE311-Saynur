@@ -327,37 +327,31 @@
     }
 
     .container {
-  width: 60%;
-  max-width: 700px;
-  min-width: 300px;
-  margin: 40px auto; /* otomatik ortalama */
+      width: 60%;
+      max-width: 700px;
+      min-width: 300px;
+      margin: 40px auto;
+      text-align: center; /* ✅ HER ŞEYİ ORTALAR */
     }
 
     .week-box {
-  margin-bottom: 25px;
-  padding: 0;
-}
-
-.week-title {
-  font-size: 22px;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #6d5c4b;
-  border-left: 6px solid #d5c5b3;
-  padding-left: 10px;
-}
-
+      margin-bottom: 25px;
+      padding: 0;
+    }
 
     .week-title {
       font-size: 22px;
       margin-bottom: 10px;
       font-weight: bold;
       color: #6d5c4b;
+      border-left: 6px solid #d5c5b3;
+      padding-left: 10px;
+      display: inline-block; /* ✅ orta hizalı kalsın */
     }
 
     a {
       display: block;
-      margin: 4px 0 8px 12px;
+      margin: 6px 0;
       text-decoration: none;
       font-size: 17px;
       color: #7b604b;
@@ -415,3 +409,4 @@
 
 </body>
 </html>
+
