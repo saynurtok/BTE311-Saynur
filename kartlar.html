@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ülkeler ve Başkentleri</title>
 
+  <!-- Bootstrap CSS ekleme -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+  >
+
   <style>
-    /* Genel sayfa ayarları */
     body {
       font-family: Arial, sans-serif;
-      background-color: #767676;
+      background-color: #000;
       color: #fff;
       margin: 0;
       padding: 40px 20px;
@@ -20,82 +25,44 @@
       box-sizing: border-box;
     }
 
-    /* Başlık */
     h1 {
       font-size: 2em;
       margin-bottom: 30px;
       letter-spacing: 1px;
+      text-align: center;
     }
 
-    /* Kartların bulunduğu alan: sabit 6 sütun -> 2 satır (12 kart) */
-    .container {
-      display: grid;
-      grid-template-columns: repeat(6, 200px); /* Her satırda 6 kart */
-      gap: 25px;
-      justify-content: center; /* Ortala */
-      align-items: start;
-    }
-
-    /* Kart tasarımı */
     .card {
       background-color: #fff;
       color: #000;
       border-radius: 15px;
-      width: 200px; /* Grid ile uyumlu sabit genişlik */
       box-shadow: 0 6px 18px rgba(0,0,0,0.45);
       text-align: center;
       transition: transform 0.18s ease, box-shadow 0.18s ease;
       overflow: hidden;
     }
 
-    /* Hover efekti */
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 30px rgba(0,0,0,0.6);
     }
 
-    /* Bayrak resimleri */
     .card img {
       width: 100%;
       height: 120px;
-      display: block;
       object-fit: cover;
     }
 
-    /* Ülke adı */
     .card h3 {
       margin: 12px 10px 6px;
       font-size: 1.05em;
     }
 
-    /* Başkent bilgisi */
     .card p {
       margin: 0 10px 14px;
       color: #333;
       font-size: 0.95em;
     }
-
-    /* Responsive: dar ekranlarda düzeni bozmadan düşürme */
-    @media (max-width: 1200px) {
-      .container {
-        grid-template-columns: repeat(4, 1fr); /* 4 sütun */
-        grid-auto-rows: auto;
-      }
-      .card { width: 100%; max-width: 240px; }
-    }
-
-    @media (max-width: 900px) {
-      .container {
-        grid-template-columns: repeat(3, 1fr); /* 3 sütun */
-      }
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        grid-template-columns: repeat(2, 1fr); /* 2 sütun */
-      }
-    }
-
   </style>
 </head>
 <body>
@@ -103,92 +70,123 @@
   <h1>Ülkeler ve Başkentleri</h1>
 
   <div class="container">
+    <div class="row g-4 justify-content-center">
+      
+      <!-- 1 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card">
+          <img src="https://flagcdn.com/w320/tr.png" alt="Türkiye Bayrağı">
+          <h3>Türkiye</h3>
+          <p>Başkent: Ankara</p>
+        </div>
+      </div>
 
-    <!-- 1 -->
-    <div class="card">
-      <img src="https://flagcdn.com/w320/tr.png" alt="Türkiye Bayrağı">
-      <h3>Türkiye</h3>
-      <p>Başkent: Ankara</p>
+      <!-- 2 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card">
+          <img src="https://flagcdn.com/w320/it.png" alt="İtalya Bayrağı">
+          <h3>İtalya</h3>
+          <p>Başkent: Roma</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card">
+          <img src="https://flagcdn.com/w320/de.png" alt="Almanya Bayrağı">
+          <h3>Almanya</h3>
+          <p>Başkent: Berlin</p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card">
+          <img src="https://flagcdn.com/w320/es.png" alt="İspanya Bayrağı">
+          <h3>İspanya</h3>
+          <p>Başkent: Madrid</p>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card">
+          <img src="https://flagcdn.com/w320/br.png" alt="Brezilya Bayrağı">
+          <h3>Brezilya</h3>
+          <p>Başkent: Brasília</p>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card">
+          <img src="https://flagcdn.com/w320/gb.png" alt="İngiltere Bayrağı">
+          <h3>İngiltere</h3>
+          <p>Başkent: Londra</p>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card">
+          <img src="https://flagcdn.com/w320/jp.png" alt="Japonya Bayrağı">
+          <h3>Japonya</h3>
+          <p>Başkent: Tokyo</p>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card">
+          <img src="https://flagcdn.com/w320/th.png" alt="Tayland Bayrağı">
+          <h3>Tayland</h3>
+          <p>Başkent: Bangkok</p>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card">
+          <img src="https://flagcdn.com/w320/se.png" alt="İsveç Bayrağı">
+          <h3>İsveç</h3>
+          <p>Başkent: Stockholm</p>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card">
+          <img src="https://flagcdn.com/w320/pt.png" alt="Portekiz Bayrağı">
+          <h3>Portekiz</h3>
+          <p>Başkent: Lizbon</p>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card">
+          <img src="https://flagcdn.com/w320/kr.png" alt="Güney Kore Bayrağı">
+          <h3>Güney Kore</h3>
+          <p>Başkent: Seul</p>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card">
+          <img src="https://flagcdn.com/w320/gr.png" alt="Yunanistan Bayrağı">
+          <h3>Yunanistan</h3>
+          <p>Başkent: Atina</p>
+        </div>
+      </div>
+
     </div>
-
-    <!-- 2 -->
-    <div class="card">
-      <img src="https://flagcdn.com/w320/it.png" alt="İtalya Bayrağı">
-      <h3>İtalya</h3>
-      <p>Başkent: Roma</p>
-    </div>
-
-    <!-- 3 -->
-    <div class="card">
-      <img src="https://flagcdn.com/w320/de.png" alt="Almanya Bayrağı">
-      <h3>Almanya</h3>
-      <p>Başkent: Berlin</p>
-    </div>
-
-    <!-- 4 -->
-    <div class="card">
-      <img src="https://flagcdn.com/w320/es.png" alt="İspanya Bayrağı">
-      <h3>İspanya</h3>
-      <p>Başkent: Madrid</p>
-    </div>
-
-    <!-- 5 -->
-    <div class="card">
-      <img src="https://flagcdn.com/w320/br.png" alt="Brezilya Bayrağı">
-      <h3>Brezilya</h3>
-      <p>Başkent: Brasília</p>
-    </div>
-
-    <!-- 6 -->
-    <div class="card">
-      <img src="https://flagcdn.com/w320/gb.png" alt="İngiltere Bayrağı">
-      <h3>İngiltere</h3>
-      <p>Başkent: Londra</p>
-    </div>
-
-    <!-- 7 -->
-    <div class="card">
-      <img src="https://flagcdn.com/w320/jp.png" alt="Japonya Bayrağı">
-      <h3>Japonya</h3>
-      <p>Başkent: Tokyo</p>
-    </div>
-
-    <!-- 8 -->
-    <div class="card">
-      <img src="https://flagcdn.com/w320/th.png" alt="Tayland Bayrağı">
-      <h3>Tayland</h3>
-      <p>Başkent: Bangkok</p>
-    </div>
-
-    <!-- 9 -->
-    <div class="card">
-      <img src="https://flagcdn.com/w320/se.png" alt="İsveç Bayrağı">
-      <h3>İsveç</h3>
-      <p>Başkent: Stockholm</p>
-    </div>
-
-    <!-- 10 -->
-    <div class="card">
-      <img src="https://flagcdn.com/w320/pt.png" alt="Portekiz Bayrağı">
-      <h3>Portekiz</h3>
-      <p>Başkent: Lizbon</p>
-    </div>
-
-    <!-- 11 -->
-    <div class="card">
-      <img src="https://flagcdn.com/w320/kr.png" alt="Güney Kore Bayrağı">
-      <h3>Güney Kore</h3>
-      <p>Başkent: Seul</p>
-    </div>
-
-    <!-- 12 -->
-    <div class="card">
-      <img src="https://flagcdn.com/w320/gr.png" alt="Yunanistan Bayrağı">
-      <h3>Yunanistan</h3>
-      <p>Başkent: Atina</p>
-    </div>
-
   </div>
 
+  <!-- Bootstrap JS (opsiyonel, animasyonlar için gerekebilir) -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
 </body>
 </html>
+
