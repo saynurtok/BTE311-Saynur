@@ -558,7 +558,21 @@
       box-shadow: 0 0 10px #00ffcc;
     }
 
-    /* Modal tasarımı: anasayfaya uyumlu cam efekti */
+    /* PASİF BUTON STİLİ (Türkiye dışı) */
+    .btn-disabled {
+      background: rgba(255,255,255,0.25) !important;
+      color: #ccc !important;
+      cursor: not-allowed !important;
+      box-shadow: none !important;
+      transition: none !important;
+    }
+
+    .btn-disabled:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    /* Modal tasarımı */
     .modal-content {
       background: rgba(255,255,255,0.08);
       backdrop-filter: blur(12px);
@@ -574,7 +588,7 @@
 <div class="container">
   <div class="row g-4 justify-content-center">
 
-    <!-- 1) TÜRKİYE (Özel - Modal Açılır) -->
+    <!-- 1) TÜRKİYE (Aktif) -->
     <div class="col-6 col-md-4 col-lg-2">
       <div class="card">
         <img src="https://flagcdn.com/w320/tr.png" alt="Türkiye Bayrağı">
@@ -592,7 +606,7 @@
         <img src="https://flagcdn.com/w320/it.png" alt="İtalya Bayrağı">
         <h3>İtalya</h3>
         <p>Başkent: Roma</p>
-        <button class="minimal-btn">Tıkla</button>
+        <button class="minimal-btn btn-disabled">Tıkla</button>
       </div>
     </div>
 
@@ -602,7 +616,7 @@
         <img src="https://flagcdn.com/w320/de.png" alt="Almanya Bayrağı">
         <h3>Almanya</h3>
         <p>Başkent: Berlin</p>
-        <button class="minimal-btn">Tıkla</button>
+        <button class="minimal-btn btn-disabled">Tıkla</button>
       </div>
     </div>
 
@@ -612,7 +626,7 @@
         <img src="https://flagcdn.com/w320/es.png" alt="İspanya Bayrağı">
         <h3>İspanya</h3>
         <p>Başkent: Madrid</p>
-        <button class="minimal-btn">Tıkla</button>
+        <button class="minimal-btn btn-disabled">Tıkla</button>
       </div>
     </div>
 
@@ -622,7 +636,7 @@
         <img src="https://flagcdn.com/w320/br.png" alt="Brezilya Bayrağı">
         <h3>Brezilya</h3>
         <p>Başkent: Brasília</p>
-        <button class="minimal-btn">Tıkla</button>
+        <button class="minimal-btn btn-disabled">Tıkla</button>
       </div>
     </div>
 
@@ -632,7 +646,7 @@
         <img src="https://flagcdn.com/w320/gb.png" alt="İngiltere Bayrağı">
         <h3>İngiltere</h3>
         <p>Başkent: Londra</p>
-        <button class="minimal-btn">Tıkla</button>
+        <button class="minimal-btn btn-disabled">Tıkla</button>
       </div>
     </div>
 
@@ -642,7 +656,7 @@
         <img src="https://flagcdn.com/w320/jp.png" alt="Japonya Bayrağı">
         <h3>Japonya</h3>
         <p>Başkent: Tokyo</p>
-        <button class="minimal-btn">Tıkla</button>
+        <button class="minimal-btn btn-disabled">Tıkla</button>
       </div>
     </div>
 
@@ -652,7 +666,7 @@
         <img src="https://flagcdn.com/w320/th.png" alt="Tayland Bayrağı">
         <h3>Tayland</h3>
         <p>Başkent: Bangkok</p>
-        <button class="minimal-btn">Tıkla</button>
+        <button class="minimal-btn btn-disabled">Tıkla</button>
       </div>
     </div>
 
@@ -662,7 +676,7 @@
         <img src="https://flagcdn.com/w320/se.png" alt="İsveç Bayrağı">
         <h3>İsveç</h3>
         <p>Başkent: Stockholm</p>
-        <button class="minimal-btn">Tıkla</button>
+        <button class="minimal-btn btn-disabled">Tıkla</button>
       </div>
     </div>
 
@@ -672,7 +686,7 @@
         <img src="https://flagcdn.com/w320/pt.png" alt="Portekiz Bayrağı">
         <h3>Portekiz</h3>
         <p>Başkent: Lizbon</p>
-        <button class="minimal-btn">Tıkla</button>
+        <button class="minimal-btn btn-disabled">Tıkla</button>
       </div>
     </div>
 
@@ -682,7 +696,7 @@
         <img src="https://flagcdn.com/w320/kr.png" alt="Güney Kore Bayrağı">
         <h3>Güney Kore</h3>
         <p>Başkent: Seul</p>
-        <button class="minimal-btn">Tıkla</button>
+        <button class="minimal-btn btn-disabled">Tıkla</button>
       </div>
     </div>
 
@@ -692,7 +706,7 @@
         <img src="https://flagcdn.com/w320/gr.png" alt="Yunanistan Bayrağı">
         <h3>Yunanistan</h3>
         <p>Başkent: Atina</p>
-        <button class="minimal-btn">Tıkla</button>
+        <button class="minimal-btn btn-disabled">Tıkla</button>
       </div>
     </div>
 
