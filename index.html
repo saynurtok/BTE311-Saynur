@@ -296,7 +296,7 @@
 
 
 
-
+<!--
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -308,12 +308,12 @@
       font-family: "Trebuchet MS", sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4efe7; /* krem arka plan */
-      color: #4a3f35; /* yumuşak kahve tonu yazılar */
+      background-color: #f4efe7;
+      color: #4a3f35; 
     }
 
     header {
-      background: #e5d5c3; /* latte tonu */
+      background: #e5d5c3; 
       text-align: center;
       padding: 28px;
       border-bottom: 3px solid #d1c0ae;
@@ -331,7 +331,7 @@
       max-width: 700px;
       min-width: 300px;
       margin: 40px auto;
-      text-align: center; /* ✅ HER ŞEYİ ORTALAR */
+      text-align: center; 
     }
 
     .week-box {
@@ -346,7 +346,7 @@
       color: #6d5c4b;
       border-left: 6px solid #d5c5b3;
       padding-left: 10px;
-      display: inline-block; /* ✅ orta hizalı kalsın */
+      display: inline-block; 
     }
 
     a {
@@ -413,5 +413,163 @@
 </footer>
 
 </body>
-</html>
+</html> -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Saynur Tök - Web Sayfası</title>
+
+  <style>
+    /* ---- GLOBAL STYLES ---- */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", "Trebuchet MS", sans-serif;
+      color: #f0f0f0;
+
+      /* Arka plan: siyah + mor + yeşil ışık huzmesi */
+      background: radial-gradient(circle at 20% 20%, rgba(118,0,255,0.35), transparent 60%),
+                  radial-gradient(circle at 80% 70%, rgba(0,255,180,0.35), transparent 60%),
+                  #000000;
+      background-attachment: fixed;
+    }
+
+    header {
+      text-align: center;
+      padding: 32px 0;
+      font-size: 36px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #ffffffcc;
+      text-shadow: 0 0 15px rgba(255,255,255,0.15);
+    }
+
+    /* ---- CONTAINER ---- */
+    .container {
+      width: 75%;
+      max-width: 900px;
+      margin: 40px auto;
+    }
+
+    /* ---- WEEK CARD ---- */
+    .week-box {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.3s;
+    }
+
+    .week-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    }
+
+    .week-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #d8d8d8;
+      border-left: 5px solid #8a5eff;
+      padding-left: 12px;
+    }
+
+    /* ---- LINKS ---- */
+    a {
+      display: block;
+      padding: 10px 0;
+      text-decoration: none;
+      font-size: 17px;
+      color: #d9d9d9;
+      transition: 0.25s;
+      position: relative;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, #7c4dff, #00ffcc);
+      transition: 0.25s;
+    }
+
+    a:hover {
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    a:hover::after {
+      width: 100%;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #cccccc;
+      margin-top: 40px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>Saynur Tök</header>
+
+<div class="container">
+
+  <div class="week-box">
+    <div class="week-title">Hafta 4</div>
+    <a href="form1.html" target="_blank">Form</a>
+    <a href="test1.html" target="_blank">Test</a>
+  </div>
+
+  <div class="week-box">
+    <div class="week-title">Hafta 5 & 6</div>
+    <a href="tablo1.html" target="_blank">Inline CSS Tablo</a>
+    <a href="tablo2.html" target="_blank">Internal CSS Tablo</a>
+    <a href="tablo3.html" target="_blank">External CSS Tablo</a>
+    <a href="venn.html" target="_blank">Venn Şeması</a>
+  </div>
+
+  <div class="week-box">
+    <div class="week-title">Hafta 7</div>
+    <a href="animasyon.html" target="_blank">Animasyon</a>
+    <a href="sınıf.html" target="_blank">Lab Görevi</a>
+  </div>
+
+  <div class="week-box">
+    <div class="week-title">Hafta 8</div>
+    <a href="kartlar.html" target="_blank">Kartlar</a>
+  </div>
+
+</div>
+
+<footer>
+  © Saynur Tök - BTE311 Web Tabanlı Programlama
+</footer>
+
+</body>
+</html>
