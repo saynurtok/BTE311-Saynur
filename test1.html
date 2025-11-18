@@ -132,7 +132,7 @@
 
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
@@ -327,9 +327,211 @@
 </form>
 
 </body>
-</html>
+</html> -->
 
 
  
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Konu Testi</title>
+
+  <style>
+    /* ---- ARKA PLAN ---- */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      color: #fff;
+      background: radial-gradient(circle at 20% 20%, rgba(118,0,255,0.35), transparent 60%),
+                  radial-gradient(circle at 80% 70%, rgba(0,255,180,0.35), transparent 60%),
+                  #000000;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    /* ---- BAŞLIK ---- */
+    h1 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #e4e4e4;
+      text-shadow: 0 0 8px rgba(255,255,255,0.15);
+      letter-spacing: 1px;
+    }
+
+    /* ---- TEK KART KONTAINER ---- */
+    .test-container {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(12px);
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 30px 25px;
+      width: 100%;
+      max-width: 650px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .soru {
+      text-align: left;
+    }
+
+    .soru h3 {
+      margin-bottom: 12px;
+      font-size: 18px;
+      color: #dcdcdc;
+      text-align: center;
+    }
+
+    /* ---- INPUT & SELECT ---- */
+    input, select, textarea {
+      width: 95%;
+      padding: 8px 10px;
+      margin: 5px 0;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      outline: none;
+      font-size: 14px;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #8a5eff;
+      box-shadow: 0 0 8px #8a5eff;
+    }
+
+    /* ---- RADIO / CHECKBOX ---- */
+    .radio-group, .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-left: 10px;
+      color: #eaeaea;
+      font-size: 14px;
+    }
+
+    .radio-group input, .checkbox-group input {
+      width: auto;
+      margin-right: 8px;
+    }
+
+    /* ---- BUTONLAR ---- */
+    .butonlar {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    input[type="submit"], input[type="reset"] {
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    input[type="submit"] {
+      background: linear-gradient(90deg, #7c4dff, #00ffcc);
+      color: #fff;
+    }
+
+    input[type="submit"]:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #00ffcc;
+    }
+
+    input[type="reset"] {
+      background: linear-gradient(90deg, #444, #999);
+      color: #fff;
+    }
+
+    input[type="reset"]:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 8px #777;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>HTML Konu Testi</h1>
+
+<div class="test-container">
+  <form>
+
+    <div class="soru">
+      <h3>1. HTML nedir?</h3>
+      <div class="radio-group">
+        <label><input type="radio" name="q1"> Bir programlama dilidir.</label>
+        <label><input type="radio" name="q1"> Web sayfalarının yapısını tanımlar.</label>
+        <label><input type="radio" name="q1"> Grafik tasarım aracıdır.</label>
+      </div>
+    </div>
+
+    <div class="soru">
+      <h3>2. Aşağıdakilerden hangileri HTML etiketidir?</h3>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="q2"> &lt;div&gt;</label>
+        <label><input type="checkbox" name="q2"> &lt;h1&gt;</label>
+        <label><input type="checkbox" name="q2"> print()</label>
+      </div>
+    </div>
+
+    <div class="soru">
+      <h3>3. CSS ne işe yarar?</h3>
+      <div class="radio-group">
+        <label><input type="radio" name="q3"> Sayfanın görünümünü ve stilini ayarlamak için.</label>
+        <label><input type="radio" name="q3"> Veritabanı oluşturmak için.</label>
+        <label><input type="radio" name="q3"> Program çalıştırmak için.</label>
+      </div>
+    </div>
+
+    <div class="soru">
+      <h3>4. JavaScript hangi amaçla kullanılır?</h3>
+      <div class="radio-group">
+        <label><input type="radio" name="q4"> Sayfalara etkileşim kazandırmak için.</label>
+        <label><input type="radio" name="q4"> Sadece yazı biçimlendirmek için.</label>
+        <label><input type="radio" name="q4"> Görselleri eklemek için.</label>
+      </div>
+    </div>
+
+    <div class="soru">
+      <h3>5. Hangi HTML etiketi resim eklemek için kullanılır?</h3>
+      <select name="q5">
+        <option>&lt;img&gt;</option>
+        <option>&lt;picture&gt;</option>
+        <option>&lt;image&gt;</option>
+      </select>
+    </div>
+
+    <div class="butonlar">
+      <input type="submit" value="Gönder">
+      <input type="reset" value="Sıfırla">
+    </div>
+
+  </form>
+</div>
+
+</body>
+</html>
 
 
