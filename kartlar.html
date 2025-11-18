@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
@@ -225,4 +225,204 @@
   </script>
 </body>
 </html>
+ -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ülkeler Kartları</title>
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background: radial-gradient(circle at 20% 20%, rgba(118,0,255,0.35), transparent 60%),
+                  radial-gradient(circle at 80% 70%, rgba(0,255,180,0.35), transparent 60%),
+                  #000;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #e4e4e4;
+      text-shadow: 0 0 8px rgba(255,255,255,0.15);
+    }
+
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(12px);
+      border-radius: 18px;
+      padding: 20px;
+      width: 160px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 8px 0;
+      font-size: 18px;
+    }
+
+    .card p {
+      margin: 0 0 12px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .card button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #7c4dff, #00ffcc);
+      color: #fff;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .card button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #00ffcc;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top:0; left:0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .modal span {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Ülkeler Kartları</h1>
+
+<div class="cards-container">
+
+  <div class="card">
+    <img src="https://flagcdn.com/w320/tr.png" alt="Türkiye Bayrağı">
+    <h3>Türkiye</h3>
+    <p>Başkent: Ankara</p>
+    <button onclick="showCapital('https://upload.wikimedia.org/wikipedia/commons/c/c1/Ankara_skyline.jpg')">Göster</button>
+  </div>
+
+  <div class="card">
+    <img src="https://flagcdn.com/w320/it.png" alt="İtalya Bayrağı">
+    <h3>İtalya</h3>
+    <p>Başkent: Roma</p>
+    <button onclick="showCapital('https://upload.wikimedia.org/wikipedia/commons/3/33/Rome_Montage_2017.png')">Göster</button>
+  </div>
+
+  <div class="card">
+    <img src="https://flagcdn.com/w320/de.png" alt="Almanya Bayrağı">
+    <h3>Almanya</h3>
+    <p>Başkent: Berlin</p>
+    <button onclick="showCapital('https://upload.wikimedia.org/wikipedia/commons/5/5f/Berlin_Skyline_Fernsehturm_2.jpg')">Göster</button>
+  </div>
+
+  <!-- Daha fazla kart eklemek için yukarıdaki yapıyı kopyala -->
+
+</div>
+
+<!-- Modal -->
+<div class="modal" id="capitalModal">
+  <span onclick="closeModal()">&times;</span>
+  <img id="capitalImg" src="" alt="Başkent Görseli">
+</div>
+
+<script>
+  function showCapital(url){
+    const modal = document.getElementById('capitalModal');
+    const img = document.getElementById('capitalImg');
+    img.src = url;
+    modal.style.display = 'flex';
+  }
+
+  function closeModal(){
+    document.getElementById('capitalModal').style.display = 'none';
+  }
+
+  // Modal kapatma: ESC tuşu
+  document.addEventListener('keydown', function(e){
+    if(e.key === "Escape"){
+      closeModal();
+    }
+  });
+</script>
+
+</body>
+</html>
