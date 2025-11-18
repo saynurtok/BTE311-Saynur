@@ -1,92 +1,10 @@
-<!-- <!DOCTYPE html> 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-    <h2>Kişisel Bilgileriniz</h2>
-
-    <table>
-        <tr>
-            <td>
-                <label for="username">Ad: </label>
-                <td style="width: 50px;"></td>
-                <input type="text" id="username" placeholder="Adınızı giriniz.">
-            </td>
-        </tr>
-         <tr>
-            <td>
-                <label for="username">Soyad: </label>
-                <td style="width: 50px;"></td>
-                <input type="text" id="username" placeholder="Soyadınızı giriniz.">
-            </td>
-        </tr>
-         <tr>
-            <td>
-                <label for="mail">Hacettepe uzantılı mail: </label>
-                <td style="width: 50px;"></td>
-                <input type="email" id="mail" placeholder="mail giriniz.">
-            </td>
-        </tr>
-         <tr>
-            <td>
-                <label for="şifre">Şifre: </label>
-                <td style="width: 50px;"></td>
-                <input type="password" id="şifre" placeholder="Şifre giriniz.">
-            </td>
-        </tr>
-    </table>
-
-
-</body>
-</html> -->
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-<h2>HTML Formu</h2>
-<form action="/action_page.php">
-    <label for="fname">Adınız:</label>
-    <br>
-    <input type="text" id="isim" name="isim">
-    <br>
-
-    <label for="lname">Soyadınız:</label>
-    <br>
-    <input type="text" id="sisim" name="sisim">
-    <br>
-
-    <label for="mail">Hacettepe uzantılı mailiniz:</label>
-    <br>
-    <input type="email" id="mail" name="mail">
-    <br><br>
-    
-    <input type="submit" value="Gönder">
-</form>
-    
-</body>
-</html> -->
 
 
 
 
 
 
-
-
-
+<!--
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -177,3 +95,193 @@
 
             <input type="submit" value="Gönder">
         </form
+        -->
+
+
+
+
+
+
+
+        <!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kayıt Formu</title>
+
+  <style>
+    /* ---- ARKA PLAN ---- */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Poppins", sans-serif;
+      color: #fff;
+
+      background: radial-gradient(circle at 20% 20%, rgba(118,0,255,0.35), transparent 60%),
+                  radial-gradient(circle at 80% 70%, rgba(0,255,180,0.35), transparent 60%),
+                  #000000;
+      background-attachment: fixed;
+    }
+
+    /* ---- FORM KUTUSU ---- */
+    .form-container {
+      width: 420px;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 35px 45px;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      animation: fadein 0.6s ease;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 26px;
+      color: #e4e4e4;
+      text-shadow: 0 0 8px rgba(255,255,255,0.15);
+      letter-spacing: 1px;
+    }
+
+    /* ---- LABEL ---- */
+    label {
+      display: block;
+      font-weight: 500;
+      margin-top: 12px;
+      color: #dcdcdc;
+    }
+
+    /* ---- INPUTS ---- */
+    input, select {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 6px;
+      margin-bottom: 4px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: 0.25s;
+    }
+
+    input::placeholder {
+      color: #bbbbbb;
+    }
+
+    input:focus, select:focus {
+      border-color: #8a5eff;
+      box-shadow: 0 0 8px #8a5eff;
+    }
+
+    /* ---- CİNSİYET RADIO ---- */
+    .radio-group {
+      margin-top: 8px;
+      display: flex;
+      gap: 15px;
+      color: #eaeaea;
+      font-size: 14px;
+    }
+
+    .radio-group input {
+      width: auto;
+      margin-right: 5px;
+    }
+
+    /* ---- BUTONLAR ---- */
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 18px;
+    }
+
+    input[type="submit"], input[type="reset"] {
+      width: 48%;
+      background: linear-gradient(90deg, #7c4dff, #00ffcc);
+      color: white;
+      border: none;
+      padding: 11px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.25s;
+    }
+
+    input[type="reset"] {
+      background: linear-gradient(90deg, #444, #999);
+    }
+
+    input[type="submit"]:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 12px #00ffcc;
+    }
+
+    input[type="reset"]:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 10px #777;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h2>Kayıt Formu</h2>
+
+    <form action="#">
+
+      <label for="isim">Adınız:</label>
+      <input type="text" id="isim" name="isim" placeholder="Adınızı giriniz" required>
+
+      <label for="soyisim">Soyadınız:</label>
+      <input type="text" id="soyisim" name="soyisim" placeholder="Soyadınızı giriniz" required>
+
+      <label for="mail">Hacettepe Mailiniz:</label>
+      <input type="email" id="mail" name="mail" placeholder="ornek@hacettepe.edu.tr" required>
+
+      <label for="sifre">Şifre:</label>
+      <input type="password" id="sifre" name="sifre" placeholder="Şifrenizi giriniz" required>
+
+      <label>Cinsiyet:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="cinsiyet" value="Kadın" required> Kadın</label>
+        <label><input type="radio" name="cinsiyet" value="Erkek"> Erkek</label>
+        <label><input type="radio" name="cinsiyet" value="Diğer"> Diğer</label>
+      </div>
+
+      <label for="dogum">Doğum Tarihi:</label>
+      <input type="date" id="dogum" name="dogum" required>
+
+      <label for="sehir">Yaşadığınız Şehir:</label>
+      <select id="sehir" name="sehir" required>
+        <option value="">Şehir seçiniz</option>
+        <option>Ankara</option>
+        <option>İstanbul</option>
+        <option>İzmir</option>
+        <option>Bursa</option>
+        <option>Antalya</option>
+        <option>Konya</option>
+        <option>Trabzon</option>
+        <option>Eskişehir</option>
+      </select>
+
+      <div class="button-group">
+        <input type="submit" value="Gönder">
+        <input type="reset" value="Temizle">
+      </div>
+
+    </form>
+  </div>
+</body>
+</html>
