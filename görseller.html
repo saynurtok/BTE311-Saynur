@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Hayvan Kart Projesi</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .card {
+        border: 2px solid #333;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .small-card {
+        flex: 1;
+        border: 2px solid #444;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+
+    button {
+        margin: 5px;
+        padding: 8px 14px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ÜST KART -->
+    <div class="card">
+        <h2>Rastgele Hayvan Resmi (Sayfa Yenilenince Değişir)</h2>
+        <img id="topImage">
+    </div>
+
+    <!-- ALTTAKİ 3 KART -->
+    <div class="row">
+
+        <div class="small-card">
+            <h3>Kart 1</h3>
+            <button onclick="showImage(1)">Göster</button>
+            <button onclick="hideImage(1)">Gizle</button>
+            <img id="img1" style="display:none;">
+        </div>
+
+        <div class="small-card">
+            <h3>Kart 2</h3>
+            <button onclick="showImage(2)">Göster</button>
+            <button onclick="hideImage(2)">Gizle</button>
+            <img id="img2" style="display:none;">
+        </div>
+
+        <div class="small-card">
+            <h3>Kart 3</h3>
+            <button onclick="showImage(3)">Göster</button>
+            <button onclick="hideImage(3)">Gizle</button>
+            <img id="img3" style="display:none;">
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // Arka plan renkleri
+    function randomBackground() {
+        const colors = ["#f2d7d5", "#d5f5e3", "#d6eaf8", "#f9e79f", "#f8c471", "#d2b4de", "#aed6f1"];
+        document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    // 10 farklı hayvan resmi linki
+    const animalImages = [
+        "https://images.unsplash.com/photo-1508672019048-805c876b67e2",
+        "https://images.unsplash.com/photo-1552410260-958d4d1e940c",
+        "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+        "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8",
+        "https://images.unsplash.com/photo-1525253086316-d0c936c814f8",
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+        "https://images.unsplash.com/photo-1546182990-dffeafbe841d",
+        "https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0",
+        "https://images.unsplash.com/photo-1574158622682-e40e69881006",
+        "https://images.unsplash.com/photo-1546182990-72c14743f8c4"
+    ];
+
+    // Rastgele resim seçen fonksiyon
+    function getRandomAnimal() {
+        return animalImages[Math.floor(Math.random() * animalImages.length)];
+    }
+
+    // Üstteki kart için resim yükle
+    document.getElementById("topImage").src = getRandomAnimal();
+
+    // Göster/Gizle fonksiyonları
+    function showImage(id) {
+        const img = document.getElementById("img" + id);
+        img.src = getRandomAnimal();
+        img.style.display = "block";
+    }
+
+    function hideImage(id) {
+        const img = document.getElementById("img" + id);
+        img.style.display = "none";
+    }
+
+    // Arka plan rengi değiştir
+    randomBackground();
+</script>
+
+</body>
+</html>
