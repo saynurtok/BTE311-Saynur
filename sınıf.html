@@ -79,7 +79,7 @@ body {
 
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
@@ -164,4 +164,95 @@ body {
 </div>
 
 </body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hacettepe BÖTE</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        font-family: Arial, Helvetica, sans-serif;
+        overflow: hidden;
+    }
+
+    /* Hareket eden kutular */
+    .box {
+        position: absolute;
+        width: 380px;
+        height: 180px;
+        background: rgba(220, 50, 70, 0.35);
+        border-radius: 5px;
+        animation: move 6s infinite alternate ease-in-out;
+    }
+
+    /* Her kutuya farklı konum ve gecikme veriyoruz */
+    .b1 { top: 140px; left: 50px; animation-delay: 0s; }
+    .b2 { top: 110px; left: 250px; animation-delay: 0.3s; }
+    .b3 { top: 160px; left: 450px; animation-delay: 0.6s; }
+    .b4 { top: 130px; left: 650px; animation-delay: 0.9s; }
+    .b5 { top: 170px; left: 850px; animation-delay: 1.2s; }
+
+    @keyframes move {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(25px); }
+    }
+
+    /* Metin kısmı */
+    .content {
+        position: absolute;
+        top: 145px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+    }
+
+    .baslik {
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+
+    .alt {
+        font-weight: normal;
+        font-size: 18px;
+    }
+</style>
+</head>
+
+<body>
+
+    <!-- Hareket eden kutular -->
+    <div class="box b1"></div>
+    <div class="box b2"></div>
+    <div class="box b3"></div>
+    <div class="box b4"></div>
+    <div class="box b5"></div>
+
+    <!-- Yazı alanı -->
+    <div class="content">
+        <div class="baslik">Hacettepe BÖTE</div>
+        <div class="alt">Öğretim teknolojileri ve bilişim teknolojileri eğitimi için en iyi adres.</div>
+    </div>
+
+</body>
 </html>
+
