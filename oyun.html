@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
@@ -229,6 +229,306 @@ function resetGame(){
   updateScores();
   document.getElementById("result").innerText="";
   document.getElementById("computerChoice").innerText="";
+}
+
+</script>
+
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Taş Kağıt Makas</title>
+<style>
+
+/* ANA SAYFA TEMASI */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "Trebuchet MS", sans-serif;
+  color: white;
+
+  background: radial-gradient(circle at 20% 20%, rgba(118,0,255,0.35), transparent 60%),
+              radial-gradient(circle at 80% 70%, rgba(0,255,180,0.35), transparent 60%),
+              #000000;
+  background-attachment: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* OYUN KUTUSU */
+.container {
+  width: 800px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  padding: 30px;
+  text-align: center;
+}
+
+/* BAŞLIK */
+h1 {
+  margin-bottom: 5px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+/* İSİM GİRİŞİ */
+#nameScreen input {
+  padding: 12px;
+  width: 60%;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+#nameScreen button {
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+  background: linear-gradient(90deg,#7c4dff,#00ffcc);
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+/* OYUN */
+.game { display: none; }
+
+.players {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.playerBox {
+  width: 220px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.playerName {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.score {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.choices {
+  margin: 20px 0;
+}
+
+/* YUVARLAK BUTON */
+.choiceBtn {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  font-size: 36px;
+  margin: 0 15px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.15);
+  transition: 0.3s;
+}
+
+.choiceBtn:hover {
+  transform: scale(1.2);
+  background: rgba(255,255,255,0.35);
+}
+
+/* MESAJ */
+#result {
+  font-size: 22px;
+  margin: 15px 0;
+}
+
+#computerChoice {
+  font-size: 18px;
+}
+
+/* KAZANAN VURGUSU */
+.win {
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+.lose {
+  color: #ff4d6d;
+  text-shadow: 0 0 10px #ff4d6d;
+}
+
+/* RESET */
+.reset {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div id="nameScreen">
+  <h1>🎮 Taş Kağıt Makas 🎮</h1>
+  <p>Adını gir:</p>
+  <input type="text" id="username" placeholder="İsmini yaz...">
+  <br>
+  <button onclick="startGame()">Başla</button>
+</div>
+
+<div class="game" id="gameScreen">
+
+<div class="players">
+  <div class="playerBox">
+    <div class="playerName" id="playerName"></div>
+    <div class="score">Skor: <span id="playerScore">0</span></div>
+  </div>
+
+  <div class="playerBox">
+    <div class="playerName">Saynur</div>
+    <div class="score">Skor: <span id="computerScore">0</span></div>
+  </div>
+</div>
+
+<h2>Hamleni seç:</h2>
+
+<div class="choices">
+  <button class="choiceBtn" onclick="play('tas')">✊</button>
+  <button class="choiceBtn" onclick="play('makas')">✌️</button>
+  <button class="choiceBtn" onclick="play('kagit')">✋</button>
+</div>
+
+<div id="computerChoice"></div>
+<div id="result"></div>
+
+<button class="reset" onclick="resetGame()">Sıfırla</button>
+
+</div>
+
+</div>
+
+<script>
+
+let user="";
+let playerScore=0;
+let computerScore=0;
+let round=0;
+const maxRound=5;
+
+function startGame(){
+  const isim=document.getElementById("username").value;
+  if(isim===""){ alert("İsmini gir!"); return; }
+  user=isim;
+  document.getElementById("playerName").innerText=user;
+  document.getElementById("nameScreen").style.display="none";
+  document.getElementById("gameScreen").style.display="block";
+}
+
+function getComputerChoice(){
+  const choices=["tas","kagit","makas"];
+  return choices[Math.floor(Math.random()*3)];
+}
+
+function play(player){
+  if(round>=maxRound) return;
+
+  const comp = getComputerChoice();
+  round++;
+
+  document.getElementById("computerChoice").innerText = 
+    "Saynur'un hamlesi: " + emoji(comp);
+
+  let result="";
+
+  if(player===comp){
+    result="Berabere!";
+  }
+  else if(
+    (player=="tas" && comp=="makas") ||
+    (player=="makas" && comp=="kagit") ||
+    (player=="kagit" && comp=="tas")
+  ){
+    playerScore++;
+    result="Kazandın!";
+  } 
+  else {
+    computerScore++;
+    result="Kaybettin!";
+  }
+
+  updateScores();
+  document.getElementById("result").innerText=result;
+
+  if(round===maxRound){
+    finishGame();
+  }
+}
+
+function finishGame(){
+  const resultBox = document.getElementById("result");
+
+  if(playerScore > computerScore){
+    resultBox.innerText = "🏆 KAZANDIN!";
+    resultBox.className="win";
+  }
+  else if(computerScore > playerScore){
+    resultBox.innerText = "😢 KAYBETTİN!";
+    resultBox.className="lose";
+  }
+  else{
+    resultBox.innerText = "🤝 BERABERE!";
+    resultBox.className="";
+  }
+}
+
+function updateScores(){
+  document.getElementById("playerScore").innerText=playerScore;
+  document.getElementById("computerScore").innerText=computerScore;
+}
+
+function emoji(choice){
+  if(choice=="tas") return "✊";
+  if(choice=="kagit") return "✋";
+  if(choice=="makas") return "✌️";
+}
+
+function resetGame(){
+  playerScore=0;
+  computerScore=0;
+  round=0;
+  document.getElementById("username").value="";
+  document.getElementById("gameScreen").style.display="none";
+  document.getElementById("nameScreen").style.display="block";
+  document.getElementById("result").innerText="";
+  document.getElementById("computerChoice").innerText="";
+  document.getElementById("result").className="";
+  updateScores();
 }
 
 </script>
