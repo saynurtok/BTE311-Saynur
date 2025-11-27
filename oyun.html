@@ -1,97 +1,237 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Taş Kağıt Makas Oyunu</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-    #game { margin: auto; max-width: 400px; }
-    .choice { padding: 15px 25px; margin: 5px; font-size: 18px; cursor: pointer; }
-    #result { margin-top: 20px; font-size: 20px; }
-    #score { margin-top: 15px; font-size: 18px; }
-    #reset { margin-top: 20px; padding: 10px 20px; cursor: pointer; }
-  </style>
+<meta charset="UTF-8">
+<title>Taş Kağıt Makas - Saynur</title>
+<style>
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg,#dbeafe,#f0f9ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 800px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  padding: 30px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+#nameScreen input {
+  padding: 12px;
+  width: 60%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+#nameScreen button {
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.game {
+  display: none;
+}
+
+.players {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.playerBox {
+  width: 200px;
+  background: #eff6ff;
+  border-radius: 15px;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.playerName {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.score {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.choices {
+  margin: 20px 0;
+}
+
+.choiceBtn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 35px;
+  margin: 0 15px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.choiceBtn:hover {
+  transform: scale(1.2);
+}
+
+#result {
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+#computerChoice {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.reset {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+</style>
 </head>
 <body>
-  <h1>Taş – Kağıt – Makas</h1>
-  <div id="game">
-    <button class="choice" data-choice="tas">Taş</button>
-    <button class="choice" data-choice="kagit">Kağıt</button>
-    <button class="choice" data-choice="makas">Makas</button>
 
-    <div id="result">Bir seçenek yapınca oyun başlar...</div>
-    <div id="score">Oyuncu: 0 – Bilgisayar: 0 (İlk 5 kazanana)</div>
+<div class="container">
 
-    <button id="reset">Sıfırla / Yeni Oyun</button>
+<div id="nameScreen">
+  <h1>Taş Kağıt Makas</h1>
+  <p>Oyuna başlamak için ismini gir:</p>
+  <input type="text" id="username" placeholder="İsmini yaz...">
+  <br>
+  <button onclick="startGame()">Başla</button>
+</div>
+
+<div class="game" id="gameScreen">
+
+<div class="players">
+  <div class="playerBox">
+    <div class="playerName" id="playerName"></div>
+    <div class="score">Skor: <span id="playerScore">0</span></div>
   </div>
 
-  <script>
-    const choices = ["tas", "kagit", "makas"];
-    let playerScore = 0;
-    let computerScore = 0;
+  <div class="playerBox">
+    <div class="playerName">Saynur</div>
+    <div class="score">Skor: <span id="computerScore">0</span></div>
+  </div>
+</div>
 
-    const resultDiv = document.getElementById("result");
-    const scoreDiv = document.getElementById("score");
-    const resetBtn = document.getElementById("reset");
-    const buttons = document.querySelectorAll(".choice");
+<h2>Hamleni seç:</h2>
 
-    function getComputerChoice(){
-      const idx = Math.floor(Math.random() * 3);
-      return choices[idx];
-    }
+<div class="choices">
+  <button class="choiceBtn" onclick="play('tas')">✊</button>
+  <button class="choiceBtn" onclick="play('makas')">✌️</button>
+  <button class="choiceBtn" onclick="play('kagit')">✋</button>
+</div>
 
-    function checkWinner(p, c){
-      if (p === c) return "berabere";
-      if (
-        (p === "tas" && c === "makas") ||
-        (p === "kagit" && c === "tas") ||
-        (p === "makas" && c === "kagit")
-      ) return "player";
-      return "computer";
-    }
+<div id="computerChoice"></div>
+<div id="result"></div>
 
-    function updateResult(p, c, winner){
-      if (winner === "berabere"){
-        resultDiv.innerText = `Berabere! Sen: ${p}, Bilgisayar: ${c}`;
-      } else if (winner === "player"){
-        playerScore++;
-        resultDiv.innerText = `Kazandın! Sen: ${p}, Bilgisayar: ${c}`;
-      } else {
-        computerScore++;
-        resultDiv.innerText = `Kaybettin :(( Sen: ${p}, Bilgisayar: ${c}`;
-      }
-      scoreDiv.innerText = `Oyuncu: ${playerScore} – Bilgisayar: ${computerScore} (İlk 5 kazanana)`;
-      checkEnd();
-    }
+<button class="reset" onclick="resetGame()">Sıfırla</button>
 
-    function checkEnd(){
-      if (playerScore === 5 || computerScore === 5){
-        if (playerScore > computerScore){
-          resultDiv.innerText = "🎉 Tebrikler! Seriyi kazandın!";
-        } else {
-          resultDiv.innerText = "Bilgisayar kazandı 😢 Seriyi kaybettin.";
-        }
-        buttons.forEach(b => b.disabled = true);
-      }
-    }
+</div>
 
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const playerChoice = btn.dataset.choice;
-        const compChoice = getComputerChoice();
-        const winner = checkWinner(playerChoice, compChoice);
-        updateResult(playerChoice, compChoice, winner);
-      });
-    });
+</div>
 
-    resetBtn.addEventListener("click", () => {
-      playerScore = 0;
-      computerScore = 0;
-      resultDiv.innerText = "Yeni oyun hazır. Seçimini yap!";
-      scoreDiv.innerText = `Oyuncu: 0 – Bilgisayar: 0 (İlk 5 kazanana)`;
-      buttons.forEach(b => b.disabled = false);
-    });
-  </script>
+<script>
+
+let user = "";
+let playerScore = 0;
+let computerScore = 0;
+
+function startGame(){
+  const nameInput = document.getElementById("username").value;
+  if(nameInput === ""){
+    alert("Lütfen ismini gir!");
+    return;
+  }
+  user = nameInput;
+  document.getElementById("playerName").innerText = user;
+  document.getElementById("nameScreen").style.display = "none";
+  document.getElementById("gameScreen").style.display = "block";
+}
+
+function getComputerChoice(){
+  const choices = ["tas","kagit","makas"];
+  return choices[Math.floor(Math.random()*3)];
+}
+
+function play(playerChoice){
+  const computerChoice = getComputerChoice();
+
+  document.getElementById("computerChoice").innerText = 
+    "Saynur'un hamlesi: " + emoji(computerChoice);
+
+  let result = "";
+
+  if(playerChoice === computerChoice){
+    result = "Berabere!";
+  }
+  else if(
+    (playerChoice=="tas" && computerChoice=="makas") ||
+    (playerChoice=="kagit" && computerChoice=="tas") ||
+    (playerChoice=="makas" && computerChoice=="kagit")
+  ){
+    playerScore++;
+    result = "Kazandın!";
+  }
+  else{
+    computerScore++;
+    result = "Kaybettin!";
+  }
+
+  updateScores();
+  document.getElementById("result").innerText = result;
+}
+
+function updateScores(){
+  document.getElementById("playerScore").innerText = playerScore;
+  document.getElementById("computerScore").innerText = computerScore;
+}
+
+function emoji(choice){
+  if(choice=="tas") return "✊";
+  if(choice=="kagit") return "✋";
+  if(choice=="makas") return "✌️";
+}
+
+function resetGame(){
+  playerScore=0;
+  computerScore=0;
+  document.getElementById("username").value="";
+  document.getElementById("gameScreen").style.display="none";
+  document.getElementById("nameScreen").style.display="block";
+  updateScores();
+  document.getElementById("result").innerText="";
+  document.getElementById("computerChoice").innerText="";
+}
+
+</script>
+
 </body>
 </html>
