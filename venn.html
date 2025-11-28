@@ -57,7 +57,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -82,45 +81,37 @@ body {
   height: 100vh;
 }
 
-/* KUTU */
+/* DIŞ KUTU */
 .container {
   position: relative;
   width: 450px;
   height: 450px;
 }
 
-/* ORTA DAİRE */
+/* DAİRELER */
 .circle {
   width: 220px;
   height: 220px;
   border-radius: 50%;
   position: absolute;
-  opacity: 0.65;
-  box-shadow: 0 0 20px rgba(255,255,255,0.2);
-  transition: 0.3s;
-}
-
-/* HOVER EFEKTİ */
-.circle:hover {
-  transform: scale(1.08);
-  opacity: 0.85;
+  opacity: 0.7;
 }
 
 /* RENKLER ve POZİSYON */
-.red {
-  background: linear-gradient(135deg, #5de0e6, #004aad);
+.pink {
+  background-color: pink;
   top: 40px;
   left: 115px;
 }
 
 .blue {
-  background: linear-gradient(135deg, #ff66c4, #9b00ff);
+  background-color: deepskyblue;
   top: 160px;
   left: 190px;
 }
 
 .yellow {
-  background: linear-gradient(135deg, #7f00ff, #00ffcc);
+  background-color: gold;
   top: 160px;
   left: 40px;
 }
@@ -130,7 +121,7 @@ body {
 <body>
 
 <div class="container">
-  <div class="circle red"></div>
+  <div class="circle pink"></div>
   <div class="circle blue"></div>
   <div class="circle yellow"></div>
 </div>
