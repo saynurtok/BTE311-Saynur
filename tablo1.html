@@ -2,11 +2,90 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Inline CSS</title>
+  <title>Hafta 5-6 Tablolar</title>
+
+  <style>
+    /* ---- GLOBAL ---- */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", "Trebuchet MS", sans-serif;
+      color: #f0f0f0;
+
+      background: radial-gradient(circle at 20% 20%, rgba(118,0,255,0.35), transparent 60%),
+                  radial-gradient(circle at 80% 70%, rgba(0,255,180,0.35), transparent 60%),
+                  #000000;
+      background-attachment: fixed;
+    }
+
+    header {
+      text-align: center;
+      padding: 32px 0;
+      font-size: 34px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #ffffffd9;
+      text-shadow: 0 0 15px rgba(255,255,255,0.15);
+    }
+
+    /* ---- CONTAINER ---- */
+    .box {
+      width: 60%;
+      max-width: 800px;
+      min-width: 320px;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      margin: 30px auto;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #d8d8d8;
+      border-left: 5px solid #8a5eff;
+      padding-left: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+
+    /* Görev: External CSS tablo için sınıf */
+    .ext-table th {
+      background: rgba(0,255,180,0.15);
+    }
+    .ext-table td {
+      background: rgba(255,255,255,0.05);
+    }
+
+  </style>
+
+  <!-- External CSS bağlantısı -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h2>Inline CSS Tablo</h2>
-  <table border="1" style="border-collapse: collapse; width: 80%; text-align: center;">
+
+<header>Hafta 5-6 – Tablolar</header>
+
+<!-- ---------------- INLINE CSS TABLO ---------------- -->
+<div class="box">
+  <div class="title">Inline CSS Tablo</div>
+
+  <table border="1" style="border-collapse: collapse; width: 100%; text-align: center;">
     <tr style="background-color: #aed6f1;">
       <th>Gün</th>
       <th>Dersler</th>
@@ -28,6 +107,78 @@
       <td style="color:red;">08.40 - 10.30 Eğitimde Etik ve Ahlak <br> 13.40 - 15.30 Bilişim ve Araştırma Etiği</td>
     </tr>
   </table>
+</div>
+
+
+<!-- ---------------- INTERNAL CSS TABLO ---------------- -->
+<div class="box">
+  <div class="title">Internal CSS Tablo</div>
+
+  <style>
+    .internal-table th {
+      background-color: #f9e79f;
+      color: #000;
+    }
+    .internal-table td {
+      background-color: #fcf3cf;
+      color: #000;
+    }
+  </style>
+
+  <table class="internal-table">
+    <tr>
+      <th>Gün</th>
+      <th>Dersler</th>
+    </tr>
+    <tr>
+      <td>Pazartesi</td>
+      <td>08.40 - 10.30 Eğitimde Modelleme ve Tasarım <br> 11.40 - 13.30 Sanat ve Estetik</td>
+    </tr>
+    <tr>
+      <td>Salı</td>
+      <td>08.40 - 10.30 Sınıf Yönetimi <br> 10.40 - 12.30 Eğitimde Program Geliştirme <br> 13.40 - 15.30 Okul Dışı Öğrenme Ortamları</td>
+    </tr>
+    <tr>
+      <td>Çarşamba</td>
+      <td>08.40 - 12.30 Web Tabanlı Programlama <br> 13.40 - 15.30 Eğitsel Video Tasarımı <br> 15.40 - 17.30 Bilişim Öğretim Programları</td>
+    </tr>
+    <tr>
+      <td>Perşembe</td>
+      <td>08.40 - 10.30 Eğitimde Etik ve Ahlak <br> 13.40 - 15.30 Bilişim ve Araştırma Etiği</td>
+    </tr>
+  </table>
+</div>
+
+
+<!-- ---------------- EXTERNAL CSS TABLO ---------------- -->
+<div class="box">
+  <div class="title">External CSS Tablo</div>
+
+  <table class="ext-table">
+    <tr>
+      <th>Gün</th>
+      <th>Dersler</th>
+    </tr>
+    <tr>
+      <td>Pazartesi</td>
+      <td>08.40 - 10.30 Eğitimde Modelleme ve Tasarım <br> 11.40 - 13.30 Sanat ve Estetik</td>
+    </tr>
+    <tr>
+      <td>Salı</td>
+      <td>08.40 - 10.30 Sınıf Yönetimi <br> 10.40 - 12.30 Eğitimde Program Geliştirme <br> 13.40 - 15.30 Okul Dışı Öğrenme Ortamları</td>
+    </tr>
+    <tr>
+      <td>Çarşamba</td>
+      <td>08.40 - 12.30 Web Tabanlı Programlama <br> 13.40 - 15.30 Eğitsel Video Tasarımı <br> 15.40 - 17.30 Bilişim Öğretim Programları</td>
+    </tr>
+    <tr>
+      <td>Perşembe</td>
+      <td>08.40 - 10.30 Eğitimde Etik ve Ahlak <br> 13.40 - 15.30 Bilişim ve Araştırma Etiği</td>
+    </tr>
+  </table>
+</div>
+
 </body>
 </html>
+
 
