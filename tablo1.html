@@ -28,17 +28,19 @@
       text-shadow: 0 0 15px rgba(255,255,255,0.15);
     }
 
-    /* ---- BOX TASARIM ---- */
-    .box {
-      width: 65%;
-      max-width: 850px;
+    /* ---- ESTETIK TABLO KUTUSU ---- */
+    .table-block {
+      width: 70%;
+      max-width: 900px;
       min-width: 320px;
-      background: rgba(255,255,255,0.06);
-      backdrop-filter: blur(10px);
+
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(8px);
       padding: 25px;
       margin: 30px auto;
       border-radius: 14px;
       border: 1px solid rgba(255,255,255,0.08);
+
       box-shadow: 0 8px 25px rgba(0,0,0,0.35);
     }
 
@@ -46,7 +48,7 @@
       font-size: 22px;
       font-weight: 600;
       margin-bottom: 15px;
-      color: #d8d8d8;
+      color: #dcdcdc;
       border-left: 5px solid #8a5eff;
       padding-left: 12px;
     }
@@ -67,7 +69,7 @@
 
     /* External Tablo */
     .ext-table th {
-      background: rgba(0,255,180,0.18);
+      background: rgba(0,255,180,0.25);
       color: #000;
       font-weight: 600;
     }
@@ -87,13 +89,13 @@
       color: #000;
     }
 
-    /* Inline renkleri güzelce uyumlu görünsün diye düzenlendi */
+    /* Inline Tablo header */
     .inline-header {
       background: rgba(174,214,241,0.25);
     }
   </style>
 
-  <!-- external css dosyası örneği -->
+  <!-- external css örneği -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -101,11 +103,8 @@
 
 <header>Tablolar</header>
 
-
-
-
 <!-- ---------------- INLINE CSS TABLO ---------------- -->
-<div class="box">
+<div class="table-block">
   <div class="title">Inline CSS Tablo</div>
 
   <table>
@@ -132,11 +131,8 @@
   </table>
 </div>
 
-
-
-
 <!-- ---------------- INTERNAL CSS TABLO ---------------- -->
-<div class="box">
+<div class="table-block">
   <div class="title">Internal CSS Tablo</div>
 
   <table class="internal-table">
@@ -163,11 +159,8 @@
   </table>
 </div>
 
-
-
-
 <!-- ---------------- EXTERNAL CSS TABLO ---------------- -->
-<div class="box">
+<div class="table-block">
   <div class="title">External CSS Tablo</div>
 
   <table class="ext-table">
@@ -194,11 +187,9 @@
   </table>
 </div>
 
-
-
-
 </body>
 </html>
+
 
 
 
