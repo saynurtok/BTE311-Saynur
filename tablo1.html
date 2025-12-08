@@ -28,10 +28,10 @@
       text-shadow: 0 0 15px rgba(255,255,255,0.15);
     }
 
-    /* ---- CONTAINER ---- */
+    /* ---- BOX TASARIM ---- */
     .box {
-      width: 60%;
-      max-width: 800px;
+      width: 65%;
+      max-width: 850px;
       min-width: 320px;
       background: rgba(255,255,255,0.06);
       backdrop-filter: blur(10px);
@@ -51,11 +51,13 @@
       padding-left: 12px;
     }
 
+    /* ---- GENEL TABLO TASARIMI ---- */
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 15px;
       text-align: center;
+      font-size: 16px;
     }
 
     th, td {
@@ -63,21 +65,42 @@
       border: 1px solid rgba(255,255,255,0.25);
     }
 
-    /* Görev: External CSS tablo için sınıf */
+    /* External Tablo */
     .ext-table th {
-      background: rgba(0,255,180,0.15);
+      background: rgba(0,255,180,0.18);
+      color: #000;
+      font-weight: 600;
     }
     .ext-table td {
-      background: rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.07);
+      color: #e8e8e8;
     }
 
+    /* Internal Tablo */
+    .internal-table th {
+      background-color: #f9e79f;
+      color: #000;
+      font-weight: 600;
+    }
+    .internal-table td {
+      background-color: #fcf3cf;
+      color: #000;
+    }
+
+    /* Inline renkleri güzelce uyumlu görünsün diye düzenlendi */
+    .inline-header {
+      background: rgba(174,214,241,0.25);
+    }
   </style>
 
-  <!-- External CSS bağlantısı -->
+  <!-- external css dosyası örneği -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<header>Tablolar</header>
+
 
 
 
@@ -85,45 +108,36 @@
 <div class="box">
   <div class="title">Inline CSS Tablo</div>
 
-  <table border="1" style="border-collapse: collapse; width: 100%; text-align: center;">
-    <tr style="background-color: #aed6f1;">
+  <table>
+    <tr class="inline-header">
       <th>Gün</th>
       <th>Dersler</th>
     </tr>
     <tr>
       <td>Pazartesi</td>
-      <td style="color:blue;">08.40 - 10.30 Eğitimde Modelleme ve Tasarım <br> 11.40 - 13.30 Sanat ve Estetik</td>
+      <td style="color: #82b0ff;">08.40 - 10.30 Eğitimde Modelleme ve Tasarım <br> 11.40 - 13.30 Sanat ve Estetik</td>
     </tr>
     <tr>
       <td>Salı</td>
-      <td style="color:green;">08.40 - 10.30 Sınıf Yönetimi <br> 10.40 - 12.30 Eğitimde Program Geliştirme <br> 13.40 - 15.30 Okul Dışı Öğrenme Ortamları</td>
+      <td style="color: #8aff8a;">08.40 - 10.30 Sınıf Yönetimi <br> 10.40 - 12.30 Eğitimde Program Geliştirme <br> 13.40 - 15.30 Okul Dışı Öğrenme Ortamları</td>
     </tr>
     <tr>
       <td>Çarşamba</td>
-      <td style="color:purple;">08.40 - 12.30 Web Tabanlı Programlama <br> 13.40 - 15.30 Eğitsel Video Tasarımı <br> 15.40 - 17.30 Bilişim Öğretim Programları</td>
+      <td style="color: #d28aff;">08.40 - 12.30 Web Tabanlı Programlama <br> 13.40 - 15.30 Eğitsel Video Tasarımı <br> 15.40 - 17.30 Bilişim Öğretim Programları</td>
     </tr>
     <tr>
       <td>Perşembe</td>
-      <td style="color:red;">08.40 - 10.30 Eğitimde Etik ve Ahlak <br> 13.40 - 15.30 Bilişim ve Araştırma Etiği</td>
+      <td style="color: #ff8a8a;">08.40 - 10.30 Eğitimde Etik ve Ahlak <br> 13.40 - 15.30 Bilişim ve Araştırma Etiği</td>
     </tr>
   </table>
 </div>
 
 
+
+
 <!-- ---------------- INTERNAL CSS TABLO ---------------- -->
 <div class="box">
   <div class="title">Internal CSS Tablo</div>
-
-  <style>
-    .internal-table th {
-      background-color: #f9e79f;
-      color: #000;
-    }
-    .internal-table td {
-      background-color: #fcf3cf;
-      color: #000;
-    }
-  </style>
 
   <table class="internal-table">
     <tr>
@@ -148,6 +162,8 @@
     </tr>
   </table>
 </div>
+
+
 
 
 <!-- ---------------- EXTERNAL CSS TABLO ---------------- -->
@@ -178,7 +194,11 @@
   </table>
 </div>
 
+
+
+
 </body>
 </html>
+
 
 
